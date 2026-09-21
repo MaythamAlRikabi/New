@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --color-cream: #fdfbf7;
+  --color-cream-deep: #f7f1e8;
+  --color-gold: #d4af37;
+  --color-gold-soft: #e6cb7a;
+  --color-rose: #e8c5c8;
+  --color-rose-deep: #d9a4a9;
+  --color-charcoal: #2c3e50;
+  --color-charcoal-soft: #5b6b7c;
+}
+
+@theme inline {
+  --color-cream: var(--color-cream);
+  --color-cream-deep: var(--color-cream-deep);
+  --color-gold: var(--color-gold);
+  --color-gold-soft: var(--color-gold-soft);
+  --color-rose: var(--color-rose);
+  --color-rose-deep: var(--color-rose-deep);
+  --color-charcoal: var(--color-charcoal);
+  --color-charcoal-soft: var(--color-charcoal-soft);
+
+  --font-serif: var(--font-serif), "Georgia", serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-blob-float: blob-float 18s ease-in-out infinite;
+  --animate-blob-float-slow: blob-float 24s ease-in-out infinite reverse;
+  --animate-pulse-soft: pulse-soft 2.4s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes blob-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(4%, 6%) scale(1.08);
+  }
+  66% {
+    transform: translate(-3%, -4%) scale(0.95);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+  }
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-rose);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
